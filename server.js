@@ -5,6 +5,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+// Ruta base para verificar que el servidor responde
+app.get("/", (req, res) => {
+  res.send("VanessaBot está corriendo.");
+});
+
 app.get("/webhook", (req, res) => {
   const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
